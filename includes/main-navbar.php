@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-  <a class="navbar-brand" href="index.php">Blood</a>
+  <a class="navbar-brand" href="index.php">BloodMe</a>
   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home</a>

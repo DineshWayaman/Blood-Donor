@@ -12,8 +12,8 @@
       <div class="col-md-6 mt-md-0 mt-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase">Team X</h5>
-        <p style="text-align: center;">We are TeamX From ICBT Campus Batch 51.</p>
+        <h5 class="text-uppercase">Team Epsilon</h5>
+        <p style="text-align: center;">We are Team Epsilon From ICBT Campus Batch 51.</p>
 
       </div>
       <!-- Grid column -->
@@ -76,7 +76,7 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2022 Copyright:
-    <a href="" class="text-dec-li"> Team X, ICBT Campus. Batch 51.<i class="fas fa-heart" style="color: red;"></i></a>
+    <a href="" class="text-dec-li"> Team Epsilon. HD Batch 51, ICBT Campus.<i class="fas fa-heart" style="color: red;"></i></a>
   </div>
   <!-- Copyright -->
 

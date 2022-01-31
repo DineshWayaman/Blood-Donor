@@ -76,6 +76,13 @@
     -webkit-box-orient: vertical;
 }
 
+.lines-2{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 .news-card h4:hover{
     cursor: pointer;
     color: rgb(219, 51, 51);
@@ -120,6 +127,27 @@
 
 }
 
+.blog-title h5:hover{
+    cursor: pointer;
+    color: rgb(219, 51, 51);
+}
+
+.main-post h3:hover{
+    cursor: pointer;
+    color: rgb(219, 51, 51);
+}
+
+.main-post a{
+    text-decoration: none;
+    color: black;
+}
+
+.blog-title a{
+    text-decoration: none;
+    color: black;
+}
+
+
 
 @media only screen and (max-width: 600px) {
 
@@ -142,5 +170,15 @@
     .feedback-img{
         height: 200px;
     }
-    
+
+    .recent-post{
+        margin-left: 0;
+        
+    }
+
+    .recent-post-img{
+        height: 200px;
+    }
+
+
 }
