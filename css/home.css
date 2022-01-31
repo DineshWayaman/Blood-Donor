@@ -1,0 +1,146 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-img{
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.main-title{
+    margin-top: 10%;
+    margin-left: 25%;
+}
+
+.main-desc{
+    margin-left: 25%;
+    margin-bottom: 8px;
+}
+
+.main-btn{
+    margin-left: 25%;
+}
+
+.search-form{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 3%;
+}
+
+.text-dec-li{
+    text-decoration: none;
+}
+
+.available{
+    width: 100%;
+    height: 250px;
+    border: 1px dashed #f00;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.available h1{
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+.count{
+    width: 100%;
+    height: 250px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.feedback-img{
+    height: 100px;
+}
+
+.news-card img{
+    width: 100%;
+    height: 250px;
+}
+
+.lines{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.news-card h4:hover{
+    cursor: pointer;
+    color: rgb(219, 51, 51);
+}
+
+.news-card a{
+    text-decoration: none;
+    color: black;
+}
+
+.news-shadow:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.subModel{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    position: fixed;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.close-model{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fcfcfc;
+    cursor: pointer;
+    align-content: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .main-desc{
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .main-title{
+        margin-top: 5%;
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .main-btn{
+        margin-left: 28%;
+       
+    }
+
+    .feedback-img{
+        height: 200px;
+    }
+    
+}
