@@ -25,16 +25,84 @@
     <div class="container mt-4">
     <div class="row">
         <div class="col-md-5 shadow main-blog-post m-0">
-           <?php include('blog/mian-blog-card.php') ?>
+           <?php include('includes/blog/mian-blog-card.php') ?>
         </div>
 
         <div class="col-md-7">
-            <?php include('blog/recent-posts.php') ?>
+            <?php include('includes/blog/recent-posts.php') ?>
         </div>
     </div>
 
     </div>
 
+
+    <div class="container mt-4">
+        <div class="row g-1">
+            <div class="col-md-3  p-3" >
+                <div class="main-blog-card shadow">
+                    <img src="img/blog-grid.jpg" width="100%" alt="">
+                    <p class="m-0"><i class="fas fa-calendar" aria-hidden="true"></i> 2022-02-04</p>
+                    <a href="" ><h6 class="lines-2">Subjects to ecstatic children up as built match gravida</h6></a>
+                    <p class="lines-2 mb-1">Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus.</p>
+                    <a href=""><p class="text-center read-hover m-0" style="font-size: 18px;">Read more</p></a>
+                </div>
+            </div>
+            <div class="col-md-3  p-3">
+            <div class="main-blog-card shadow">
+                    <img src="img/blog-grid.jpg" width="100%" alt="">
+                    <p class="m-0"><i class="fas fa-calendar" aria-hidden="true"></i> 2022-02-04</p>
+                    <a href="" ><h6 class="lines-2">Subjects to ecstatic children up as built match gravida</h6></a>
+                    <p class="lines-2 mb-1">Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus.</p>
+                    <a href=""><p class="text-center read-hover m-0" style="font-size: 18px;">Read more</p></a>
+               </div>
+            </div>
+            <div class="col-md-3  p-3">
+            <div class="main-blog-card shadow">
+                    <img src="img/blog-grid.jpg" width="100%" alt="">
+                    <p class="m-0"><i class="fas fa-calendar" aria-hidden="true"></i> 2022-02-04</p>
+                    <a href="" ><h6 class="lines-2">Subjects to ecstatic children up as built match gravida</h6></a>
+                    <p class="lines-2 mb-1">Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus.</p>
+                    <a href=""><p class="text-center read-hover m-0" style="font-size: 18px;">Read more</p></a>
+               </div>
+            </div>
+            <div class="col-md-3  p-3">
+            <div class="main-blog-card shadow">
+                    <img src="img/blog-grid.jpg" width="100%" alt="">
+                    <p class="m-0"><i class="fas fa-calendar" aria-hidden="true"></i> 2022-02-04</p>
+                    <a href="" ><h6 class="lines-2">Subjects to ecstatic children up as built match gravida</h6></a>
+                    <p class="lines-2 mb-1">Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus.</p>
+                    <a href=""><p class="text-center read-hover m-0" style="font-size: 18px;">Read more</p></a>
+               </div>
+            </div>
+            <div class="col-md-3  p-3">
+            <div class="main-blog-card shadow">
+                    <img src="img/blog-grid.jpg" width="100%" alt="">
+                    <p class="m-0"><i class="fas fa-calendar" aria-hidden="true"></i> 2022-02-04</p>
+                    <a href="" ><h6 class="lines-2">Subjects to ecstatic children up as built match gravida</h6></a>
+                    <p class="lines-2 mb-1">Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus.</p>
+                    <a href=""><p class="text-center read-hover m-0" style="font-size: 18px;">Read more</p></a>
+               </div>
+            </div>
+            <div class="col-md-3  p-3">
+            <div class="main-blog-card shadow">
+                    <img src="img/blog-grid.jpg" width="100%" alt="">
+                    <p class="m-0"><i class="fas fa-calendar" aria-hidden="true"></i> 2022-02-04</p>
+                    <a href="" ><h6 class="lines-2">Subjects to ecstatic children up as built match gravida</h6></a>
+                    <p class="lines-2 mb-1">Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus.</p>
+                    <a href=""><p class="text-center read-hover m-0" style="font-size: 18px;">Read more</p></a>
+               </div>
+            </div>
+            <div class="col-md-3  p-3">
+            <div class="main-blog-card shadow">
+                    <img src="img/blog-grid.jpg" width="100%" alt="">
+                    <p class="m-0"><i class="fas fa-calendar" aria-hidden="true"></i> 2022-02-04</p>
+                    <a href="" ><h6 class="lines-2">Subjects to ecstatic children up as built match gravida</h6></a>
+                    <p class="lines-2 mb-1">Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus.</p>
+                    <a href=""><p class="text-center read-hover m-0" style="font-size: 18px;">Read more</p></a>
+               </div>
+            </div>
+        </div>
+    </div>
 
 
 

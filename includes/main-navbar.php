@@ -9,24 +9,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Blog
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-         <form action="#" method="post"><input type="hidden" class="dropdown-item" name="bookstype" value="News" id=""><input class="dropdown-item" type="submit" name="books" value="News"></form>
-         <form action="#" method="post"><input type="hidden" class="dropdown-item" name="bookstype" value="Blog" id=""><input class="dropdown-item" type="submit" name="books" value="Blog"></form>
-          <!-- <div class="dropdown-divider"></div>
-         <form action="pages/papers.php" method="post"><input type="hidden" class="dropdown-item" name="pastpapers" value="Past Paper" id=""><input class="dropdown-item" type="submit" name="papers" value="Something else here"></form>
-        </div> -->
-        </div>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Blog</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#">Events</a>
-      </li>
-
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Social Activities</a>
       </li>
       <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,38 +53,36 @@
 
     <div class="ml-10">
     <form class="form-inline my-2 my-lg-0">
-    <!-- <?php 
-        if (!isset($_SESSION['userID'])) {
-            ?> -->
-          <!-- <button class="btn btn-success my-2 my-sm-0 mr-1" type="button" data-bs-toggle="modal" data-bs-target="#regModel">Register</button> -->
+      <?php 
+        if (!isset($_SESSION['bloodme_uid'])) {
+            ?> 
          <button class="btn btn-danger my-2 my-sm-0 mr-1" type="button" data-bs-toggle="modal" data-bs-target="#logModel">Login</button>
         
-        <!-- <?php
-         }elseif (isset($_SESSION['userID'])=="" || isset($_SESSION['userID'])==null) {
-             ?> -->
-            <!-- <button class="btn btn-success my-2 my-sm-0 mr-1" type="button" data-bs-toggle="modal" data-bs-target="#regModel">Register</button> -->
-            <!-- <button class="btn btn-danger my-2 my-sm-0 mr-1" type="button" data-bs-toggle="modal" data-bs-target="#logModel">Login</button> -->
-         <!-- <?php
+        <?php
+         }elseif (isset($_SESSION['bloodme_uid'])=="" || isset($_SESSION['bloodme_uid'])==null) {
+             ?>
+            <button class="btn btn-danger my-2 my-sm-0 mr-1" type="button" data-bs-toggle="modal" data-bs-target="#logModel">Login</button>
+         <?php
         }else{
-            ?> -->
+            ?>
     
             <div class="navbar-nav mr-auto">
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                <!-- <?php 
-                     if (isset($_SESSION['username'])) {
-                     ?>  -->
+                <?php 
+                     if (isset($_SESSION['bloodme_uname'])) {
+                     ?> 
                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      
-                        <!-- Welcome <?php  echo $_SESSION['username']; ?>
+                        Welcome <?php  echo $_SESSION['bloodme_uname']; ?>
                         </a>
                         <?php
                      }
-                      ?> -->
+                      ?>
                     
                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#profileModel">Profile</a>
-                     <a class="dropdown-item" href="queries/logout.php">Logout</a>
+                     <a class="dropdown-item" href="config/logout.php">Logout</a>
                   </li>
                  </ul>
             </div>

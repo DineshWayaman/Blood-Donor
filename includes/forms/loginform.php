@@ -1,8 +1,8 @@
-<form action="queries/sqlcode.php" method="POST">
+<form action="config/sqlcode.php" method="POST">
   <div class="row">
     <div class="form-group col-md-12">
       <label for="inputEmail4">User Name</label>
-      <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="User Name">
+      <input type="text" name="username" class="form-control" id="inputEmail4" placeholder="User Name">
     </div>
     <div class="form-group col-md-12">
       <label for="inputPassword4">Password</label>

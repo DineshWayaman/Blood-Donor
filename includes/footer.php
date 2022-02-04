@@ -13,6 +13,7 @@
 
         <!-- Content -->
         <h5 class="text-uppercase">Team Epsilon</h5>
+        <img src="img/logoproject.png" style="width: 100px; height: 100px;" alt="">
         <p style="text-align: center;">We are Team Epsilon From ICBT Campus Batch 51.</p>
 
       </div>

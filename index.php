@@ -1,3 +1,8 @@
+<?php
+ob_start();
+session_start();
+include('config/dbconfig.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,136 +31,46 @@
 
     <div class="container-fluid">
 
+    <?php 
+        if (isset($_SESSION['error_msg'])) {
+            ?>
+         <div class="alert alert-danger" role="alert"><?php echo $_SESSION['error_msg']; ?></div>
+        
+        <?php
+          unset($_SESSION['error_msg']);
+         }
 
-    <div class="container shadow mt-4">
-        <div class="row">
-            <div class="col-md-6">
-                <h1 class="main-title">Donate Blood, <br>Save Life!</h1>
-                <p class="main-desc">Their are number of hospitals who don't have adequate number of blood suppliers and face the challange of blood supply. We are trying to make available adequate blood to the needy patients all over the world.</p>
-                <button class="btn btn-danger main-btn" type="button"  data-bs-toggle="modal" data-bs-target="#regModel">Become a Donor</button>
-            </div>
-            <div class="col-md-6">
-                <img class="main-img" src="img/blooddonhome.png" alt="" srcset="">
-            </div>
-        </div>
-    </div>
+         if (isset($_SESSION['success_msg'])) {
+            ?>
+         <div class="alert alert-success" role="alert"><?php echo $_SESSION['success_msg']; ?></div>
+            <?php  
+            unset($_SESSION['success_msg']);
+         }
+
+         ?>
 
 
-    <div class="container shadow mt-4">
-        <div class="search-form  mb-4">
-            <form action="#" class="m-3">
-            <div class="row">
-            <div class="col-md-4">
-            <input type="text" name="phone" class="form-control" id="inputCity" placeholder="Enter City">
-            </div>
-            <div class="form-group col-md-4">
-            <select class="form-select" aria-label="Default select example">
-            <option selected>Select Blood Group</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-</select>
-             </div>
-             <div class="form-group col-md-4">
-                <button type="text" name="phone" class="form-control btn btn-danger" id="inputCity" >Search Donor</button>
-             </div>
-        </div>
-            </form>
-        </div>
+<?php 
+        if (isset($_SESSION['bloodme_error_msg'])) {
+            ?>
+         <div class="alert alert-danger" role="alert"><?php echo $_SESSION['bloodme_error_msg']; ?></div>
+        
+        <?php
+          unset($_SESSION['bloodme_error_msg']);
+         }
 
-    </div>
+         ?>
+       
 
 
 
+         <?php include('includes/Home/home-main.php') ?>
 
-    <div class="container mt-5">
-        <h1 style="font-weight: bold; text-align: center;">Our Available Donors</h1>
-        <hr style="margin-left: auto; margin-right: auto;" size="5" width="50%">
-        <div class="row">
-            <div class="col-md-3 mb-2">
-                <div class="available shadow">
-                    <div>
-                    <div class="alert alert-danger" role="alert">
-                    <h1>A+</h1>
-                    </div>
-                    <button class="btn btn-danger">View All</button>
-                    </div>
-                </div>
-            </div>
-      <div class="col-md-3 mb-2">
-                <div class="available shadow">
-                <div>
-                    <div class="alert alert-danger" role="alert">
-                    <h1>A-</h1>
-                    </div>
-                    <button class="btn btn-danger">View All</button>
-                    </div>
-                </div>
-        </div>
 
-        <div class="col-md-3 mb-2">
-                <div class="available shadow">
-                <div>
-                    <div class="alert alert-danger" role="alert">
-                    <h1>O+</h1>
-                    </div>
-                    <button class="btn btn-danger">View All</button>
-                    </div>
-                </div>
-            </div>
+         <?php include('includes/Home/search-donor.php') ?>
 
-            <div class="col-md-3 mb-2">
-                <div class="available shadow">
-                <div>
-                    <div class="alert alert-danger" role="alert">
-                    <h1>O-</h1>
-                    </div>
-                    <button class="btn btn-danger">View All</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-2">
-                <div class="available shadow">
-                <div>
-                    <div class="alert alert-danger" role="alert">
-                    <h1>B+</h1>
-                    </div>
-                    <button class="btn btn-danger">View All</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-2">
-                <div class="available shadow">
-                <div>
-                    <div class="alert alert-danger" role="alert">
-                    <h1>B-</h1>
-                    </div>
-                    <button class="btn btn-danger">View All</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-2">
-                <div class="available shadow">
-                <div>
-                    <div class="alert alert-danger" role="alert">
-                    <h1>AB+</h1>
-                    </div>
-                    <button class="btn btn-danger">View All</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-2">
-                <div class="available shadow">
-                <div>
-                    <div class="alert alert-danger" role="alert">
-                    <h1>AB-</h1>
-                    </div>
-                    <button class="btn btn-danger">View All</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+        <?php include('includes/Home/available-groups.php') ?>
 
 
     <div class="container mt-4 shadow">
@@ -190,7 +105,15 @@
                 <div class="count shadow">
                     <div>
                     <p class="text-center"><i class="fas fa-tint fa-2x text-danger"></i></p>
-                    <h1 style="font-weight: bold; text-align: center;">1500</h1>
+                    <h1 style="font-weight: bold; text-align: center;">
+                    <?php 
+                        $getUserCount = "SELECT COUNT(*) as totUsers FROM users";
+                        $getUserCountquery = $conn->prepare($getUserCount);
+                        $getUserCountquery->execute();
+                        $fetchUserCountquery = $getUserCountquery->fetch();
+                        echo $fetchUserCountquery['totUsers'];
+                    ?>
+                    </h1>
                     <button class="btn btn-danger">Happy Donors</button>
                     </div>
                 </div>
@@ -279,7 +202,7 @@
     </div>
 
 
-
+<!-- 
     <div class="container shadow mt-5">
     <h2 class="text-center mt-3">News Updates</h2>
     <hr  style="margin-left: auto; margin-right: auto;" size="5" width="50%">
@@ -315,7 +238,7 @@
         <div style="width: 100%;" class="text-center mt-2">
             <button class="btn btn-danger mb-2">View More</button>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -362,7 +285,17 @@
 
     </div>
 
-    <?php include('includes/forms/donationrules.php') ?>
+
+
+    <?php
+
+    if (isset($_SESSION['bloodme_uid'])) {
+  
+      }else{
+        include('includes/forms/donationrules.php');
+    }
+    
+    ?>
     
     <?php include('includes/models.php') ?>
 
@@ -390,6 +323,9 @@
         popupModel.style.display = "none";
     });
 
+
+
+    
 
    </script>
     
