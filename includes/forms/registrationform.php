@@ -12,7 +12,6 @@
   <div class="form-group mt-2">
     <label for="inputAddress">City</label>
     <input type="text" name="town" class="form-control" id="inputAddress" placeholder="User Tows">
-    
   </div>
   <div class="form-group mt-2">
     <label for="inputAddress">Birth Day</label>

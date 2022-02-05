@@ -8,7 +8,7 @@
                     <div class="alert alert-danger" role="alert">
                     <h1>A+</h1>
                     </div>
-                    <button class="btn btn-danger">View All</button>
+                    <a href="findgroupwise.php?bgroup=Ap"><button class="btn btn-danger">View All</button></a>
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                     <div class="alert alert-danger" role="alert">
                     <h1>A-</h1>
                     </div>
-                    <button class="btn btn-danger">View All</button>
+                    <a href="findgroupwise.php?bgroup=Am"><button class="btn btn-danger">View All</button></a>
                     </div>
                 </div>
         </div>
@@ -29,7 +29,7 @@
                     <div class="alert alert-danger" role="alert">
                     <h1>O+</h1>
                     </div>
-                    <button class="btn btn-danger">View All</button>
+                    <a href="findgroupwise.php?bgroup=Opositive"><button class="btn btn-danger">View All</button></a>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                     <div class="alert alert-danger" role="alert">
                     <h1>O-</h1>
                     </div>
-                    <button class="btn btn-danger">View All</button>
+                    <a href="findgroupwise.php?bgroup=Om"><button class="btn btn-danger">View All</button></a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                     <div class="alert alert-danger" role="alert">
                     <h1>B+</h1>
                     </div>
-                    <button class="btn btn-danger">View All</button>
+                    <a href="findgroupwise.php?bgroup=Bp"><button class="btn btn-danger">View All</button></a>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                     <div class="alert alert-danger" role="alert">
                     <h1>B-</h1>
                     </div>
-                    <button class="btn btn-danger">View All</button>
+                    <a href="findgroupwise.php?bgroup=Bm"><button class="btn btn-danger">View All</button></a>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                     <div class="alert alert-danger" role="alert">
                     <h1>AB+</h1>
                     </div>
-                    <button class="btn btn-danger">View All</button>
+                    <a href="findgroupwise.php?bgroup=ABp"><button class="btn btn-danger">View All</button></a>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                     <div class="alert alert-danger" role="alert">
                     <h1>AB-</h1>
                     </div>
-                    <button class="btn btn-danger">View All</button>
+                    <a href="findgroupwise.php?bgroup=ABm"><button class="btn btn-danger">View All</button></a>
                     </div>
                 </div>
             </div>

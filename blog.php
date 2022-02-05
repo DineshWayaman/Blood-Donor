@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('config/dbconfig.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

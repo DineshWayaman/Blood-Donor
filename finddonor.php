@@ -1,5 +1,6 @@
 <?php
 include('config/dbconfig.php');
+session_start();
 if (isset($_POST['searchDonor'])) {
     $searchTown = $_POST['city'];
     $searchBgroup = $_POST['bgroup'];
@@ -8,11 +9,11 @@ if (isset($_POST['searchDonor'])) {
         $_SESSION['bloodme_error_msg'] = "Please Enter City";
         header('location: index.php');
     }elseif ($searchBgroup=="no-blood") {
-        echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
+        $_SESSION['bloodme_error_msg'] = "Please Select Blood Group";
         header('location: index.php');
     }else{
 
-    $searchDonors = "SELECT * FROM `users` WHERE `u_town` LIKE '%".$searchTown."%' AND `u_blood_group`='$searchBgroup'";
+    $searchDonors = "SELECT * FROM `users` WHERE `u_town` LIKE '%".$searchTown."%' AND `u_blood_group`='$searchBgroup' AND `u_status` ='1'";
     $searchUser = $conn->prepare($searchDonors);
     $searchUser->execute();
     $searchuserrow = $searchUser->rowCount();
@@ -46,7 +47,7 @@ if (isset($_POST['searchDonor'])) {
 
 
     <div class="container">
-        <div class="row">
+        <div class="row" style="height: auto;">
     
         <?php
           if ($searchuserrow>0) {

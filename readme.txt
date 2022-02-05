@@ -27,15 +27,21 @@ h_status
 h_created_date
 h_updated_date
 
+19930612
+
 Admins
 a_id
 a_name
 a_email
 a_NIC
 a_password
+a_phone
+a_type
 a_status
 a_created_date
 a_updated_date
+
+
 
 Feedbacks
 f_id
@@ -46,15 +52,18 @@ f_created_date
 f_updated_date
 
 Blog
-n_id
+b_id
 a_id
-n_img
-n_news
-n_date
-n_time
-n_status
-n_created_date
-n_updated_date
+b_img
+b_title
+b_slug
+b_metadesc
+b_content
+b_date
+b_time
+b_status
+b_created_date
+b_updated_date
 
 
 BloodRequest

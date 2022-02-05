@@ -50,7 +50,14 @@ include('config/dbconfig.php');
          ?>
 
 
-<?php 
+
+       
+
+
+
+         <?php include('includes/Home/home-main.php') ?>
+
+         <?php 
         if (isset($_SESSION['bloodme_error_msg'])) {
             ?>
          <div class="alert alert-danger" role="alert"><?php echo $_SESSION['bloodme_error_msg']; ?></div>
@@ -60,12 +67,6 @@ include('config/dbconfig.php');
          }
 
          ?>
-       
-
-
-
-         <?php include('includes/Home/home-main.php') ?>
-
 
          <?php include('includes/Home/search-donor.php') ?>
 
