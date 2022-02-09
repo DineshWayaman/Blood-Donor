@@ -19,6 +19,7 @@
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="#!">Profile</a>
+                                        <a class="dropdown-item" href="registrationform.php">Add New Admin</a>
                                         <a class="dropdown-item" href="#!">Logout</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="#!">Something else here</a>
@@ -31,7 +32,8 @@
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class="fas fa-heartbeat"></i> <span class="nav_logo-name">BloodMe</span> </a>
+        <!-- <i class="fas fa-align-justify"></i> blog hided -->
+            <div> <a href="#" class="nav_logo"> <i class="fas fa-heartbeat" style="color: #fff;"></i> <span class="nav_logo-name">BloodMe</span> </a>
                 <div class="nav_list"> 
                     <a href="index.php" class="nav_link"> 
                         <i class='bx bx-grid-alt nav_icon'></i> 

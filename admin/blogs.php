@@ -1,3 +1,22 @@
+<?php
+ob_start();
+session_start();
+include('../config/dbconfig.php');
+$status = $_SESSION['bloodme_astatus'];
+if (isset($_SESSION['bloodme_aid'])==null) {
+    $_SESSION['error_msg'] = "Login as an admin to access Home page.";
+    header('location: login.php');
+}else{
+if ($status==0) {
+    $_SESSION['error_msg'] = "You Have Blocked By Admin.";
+    echo $_SESSION['bloodme_astatus'];
+    echo $_SESSION['bloodme_aname'];
+    unset($_SESSION['bloodme_aid']);
+    unset($_SESSION['bloodme_astatus']);
+    header('location: login.php');
+}else{
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +42,27 @@
 
     <?php include('includes/Home/admin_sidebar.php') ?>
 
+    <?php 
+        if (isset($_SESSION['bloome_error_msg'])) {
+            ?>
+         <div class="alert alert-danger" role="alert"><?php echo $_SESSION['bloome_error_msg']; ?></div>
+        
+        <?php
+          unset($_SESSION['bloome_error_msg']);
+         }
+
+         if (isset($_SESSION['success_msg'])) {
+            ?>
+         <div class="alert alert-success" role="alert"><?php echo $_SESSION['success_msg']; ?></div>
+            <?php  
+            unset($_SESSION['success_msg']);
+         }
+
+         ?>
+
+
     <div class="container-fluid p-2 shadow">
-        <div width="100%" class="mb-2 mt-2"><a href="#"><button class="btn btn-success">Add New Blog</button></a></div>
+        <div width="100%" class="mb-2 mt-2"><a href="add-new-blog.php"><button class="btn btn-success">Add New Blog</button></a></div>
           <div class="table-responsive">
             <table id="users" class="table mb-0">
                 <thead>
@@ -39,68 +77,58 @@
                  </tr>
                  </thead>
                  <tbody>
+               <?php
+                   $getAllPosts = "SELECT * FROM `blog`";
+                   $getPosts = $conn->prepare($getAllPosts);
+                   $getPosts->execute();
+                   $postrow = $getPosts->rowCount();
+                 
+                   if ($postrow>0) {
+                       while ($postfetch = $getPosts->fetch()) {
+                           
+                  ?>
                  <tr>
-                     <td>Dinesh Wayaman</td>
-                     <td>dineshwayaman@gmail.com</td>
-                     <td>@mdo</td>
-                     <td>Mark</td>
-                     <td>Galewela, Sri Lanka.</td>
-                     <td>@mdo</td>
-                     <td><i class="fas fa-edit" style="color: #03be03;"></i> <i class="fas fa-trash" style="color: #f81a0f;"></i></td>
-                  </tr>
-                 <tr>
-                     <td>Jacob</td>
-                     <td>Thornton</td>
-                     <td>@fat</td>
-                     <td>Mark</td>
-                     <td>Otto</td>
-                     <td>@mdo</td>
-                     <td><i class="fas fa-edit" style="color: #03be03;"></i> <i class="fas fa-trash" style="color: #f81a0f;"></i></td>
-                </tr>
-                <tr>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>Mark</td>
-                     <td>Otto</td>
-                     <td>@mdo</td>
-                     <td><i class="fas fa-edit" style="color: #03be03;"></i> <i class="fas fa-trash" style="color: #f81a0f;"></i></td>
-                </tr>
-                <tr>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>Mark</td>
-                     <td>Otto</td>
-                     <td>@mdo</td>
-                     <td><i class="fas fa-edit" style="color: #03be03;"></i> <i class="fas fa-trash" style="color: #f81a0f;"></i></td>
-                </tr>
-                <tr>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>Mark</td>
-                     <td>Otto</td>
-                     <td>@mdo</td>
-                     <td><i class="fas fa-edit" style="color: #03be03;"></i> <i class="fas fa-trash" style="color: #f81a0f;"></i></td>
-                </tr>
-                <tr>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>Mark</td>
-                     <td>Otto</td>
-                     <td>@mdo</td>
-                     <td><i class="fas fa-edit" style="color: #03be03;"></i> <i class="fas fa-trash" style="color: #f81a0f;"></i></td>
-                </tr>
+                     <td><?php echo $postfetch['b_id'] ?></td>
+                     <td><?php echo $postfetch['b_title'] ?></td>
+                     <td><?php echo $postfetch['b_slug'] ?></td>
+                     <td><?php echo $postfetch['b_metadesc'] ?></td>
+                     <td><?php echo $postfetch['b_date'] ?></td>
+                     <td><?php echo $postfetch['a_id'] ?></td>
+                     <td><a href="includes/blogs/editpost.php?bid=<?php echo $postfetch['b_id'] ?>"><i class="fas fa-edit" style="color: #03be03;"></i></a>
+                    <?php if ($postfetch['b_status']==1) {
+                        # code...
+                    ?>
+                     <a href="config/deactive-blog.php?bid=<?php echo $postfetch['b_id'] ?>"><i class="fas fa-align-slash" style="color: #f81a0f;"></i></a> 
+                    <?php 
+                     }else{
+                       ?>
+                       <a href="config/active-blog.php?bid=<?php echo $postfetch['b_id'] ?>"><i class="fas fa-align-justify" style="color: #f81a0f;"></i></a> 
+                       <?php 
+                     }
+                    ?>
+                    </td>
+                    <tr>
+                  
+                  <?php
+                    }
+                }
+                  ?>
                  </tbody>
+
              </table>
             </div>
         </div>
+    
     
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
 
+  
 </body>
 </html>
+
+<?php 
+}
+}
+?>

@@ -1,6 +1,6 @@
 
 <?php
-  $getLastPost = "SELECT * FROM `blog` ORDER BY `b_id` DESC LIMIT 1";
+  $getLastPost = "SELECT * FROM `blog` WHERE `b_status`='1' ORDER BY `b_id` DESC LIMIT 3";
     $getPost = $conn->prepare($getLastPost);
     $getPost->execute();
     $postrow = $getPost->rowCount();
@@ -10,21 +10,23 @@
                 
 
         ?>
+  
+<div class="col-md-4 main-blog-post m-0 p-0" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
 
 <img src="<?php echo $postfetch['b_img'] ?>" alt="" width="100%" height="330px">
             <div class="m-2 main-post">
-            <a href="http://localhost/blood/blog/<?php echo $postfetch['b_slug'] ?>"><h3><?php echo $postfetch['b_title'] ?></h3></a>
-            <p class="lines">Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus.</p>
-                <div class="row d-flex justify-content-between">
-                    <div class="col-md-3">
-                     <p>2021-02-12</p> 
+            <a href="http://localhost/blood<?php echo $postfetch['b_slug'] ?>"><h4 class="p-1"><?php echo $postfetch['b_title'] ?></h4></a>
+            <p class="lines p-1"><?php echo $postfetch['b_metadesc'] ?></p>
+                <!-- <div class="row d-flex justify-content-between">
+                    <div class="col-md-4">
+                     <p><?php echo $postfetch['b_date'] ?></p> 
                     </div>
                     <div class="col-md-1">
                     <p><a href=""><i class="fas fa-share"></i></a></p>
                     </div>
-                </div>
+                </div> -->
              </div>
-
+</div>
         <?php
            }
         }

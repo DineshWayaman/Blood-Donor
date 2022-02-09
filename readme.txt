@@ -76,3 +76,8 @@ bl_phone
 bl_status
 bl_created_date
 bl_updated_date
+
+
+
+
+borders = https://getcssscan.com/css-box-shadow-examples

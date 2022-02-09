@@ -87,7 +87,7 @@ if (isset($_POST['save-blog'])) {
     $content = $_POST['content'];
     $date = $_POST['date'];
     $time = $_POST['time'];
-    $slug = preg_replace('/[^a-z0-9]+/i', '-', trim(strtolower($_POST['title'])));
+    $slug = '/'.preg_replace('/[^a-z0-9]+/i', '-', trim(strtolower($_POST['title'])));
     $logedAdminID = $_SESSION['bloodme_aid'];
 
     if ($title==null || $metadesc==null || $content==null || $date==null || $time==null) {
@@ -162,5 +162,28 @@ if ($uploadOk == 0) {
   }
 }
 }
+
+}
+
+if (isset($_POST['update-blog'])) {
+  $bid = $_POST['bid'];
+  $title = $_POST['title'];
+  $metadesc = $_POST['meta'];
+  $content = $_POST['content'];
+  $slug = $_POST['slug'];
+
+
+  $updatePost = "UPDATE blog SET b_title=?, b_slug=?, b_metadesc=?, b_content=? WHERE b_id='$bid'";
+    $updatePostQuery = $conn->prepare($updatePost);
+    $updatePostQuery->execute(array($title,$slug,$metadesc,$content));
+
+    if ($updatePostQuery) {
+        $_SESSION['success_msg'] = "Blog Update Successfully Completed.";
+         header('location: ../blogs.php');
+    }else{
+        $_SESSION['error_msg'] = "Error while proccessing. Please try again.";
+         header('location: ../blogs.php');
+    }
+    
 
 }
